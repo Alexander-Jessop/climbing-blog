@@ -1,4 +1,4 @@
-# Climbing Bog
+# Climbing Blog
 
 <div align="right">
 <span> 
