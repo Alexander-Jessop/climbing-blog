@@ -17,4 +17,5 @@ RUN pip install --upgrade pip \
 
 COPY . /app/
 
-CMD ["gunicorn", "climbing_blog.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD gunicorn climbing_blog.wsgi:application --bind 0.0.0.0:$PORT
+
