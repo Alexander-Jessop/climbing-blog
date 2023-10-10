@@ -72,6 +72,9 @@ class Post(models.Model):
     slug = models.SlugField(unique=True)
     topics = models.ManyToManyField(Topic, blank=True)
 
+    def __str__(self):
+        return str(self.title)
+
     def save(self, *args, **keyargs):
         self.slug = slugify(self.title)
         if self.status == self.PUBLISHED and not self.published:
