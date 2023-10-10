@@ -30,6 +30,8 @@ This blog project is an assignment under the Sheridan College -- Ontarion Bright
 
 ## Getting Started
 
+**View the Live Project:** You can view the live project at https://sheridan-alexander-jessop-a0fc086eb075.herokuapp.com/. <br>
+
 To get started with this project, you can follow these steps:
 
 1. Clone the Repository: Start by cloning this repository to your local machine:
