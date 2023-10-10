@@ -16,6 +16,8 @@
 - [Project Description](#project-description)
 - [Getting Started](#getting-started)
 - [Running the Project Locally](#running-the-project-locally)
+- [Logging In to the Admin Panel](#logging-in-to-the-admin-panel)
+- [Credentials](#credentials)
 - [Assignment Requirements](#assignment-requirements)
   - [Assignment 1](#assignment-1)
   - [Assignment 2](#assignment-2)
@@ -58,6 +60,8 @@ To get started with this project, you can follow these steps:
    pip install -r requirements.txt
    ```
 
+   [Back to top](#table-of-contents)
+
 ## Running the Project Locally
 
 To run the Climbing Blog locally, make sure you've completed the "Getting Started" steps and have activated your virtual environment. Then, you can start the Django development server:
@@ -67,6 +71,25 @@ py manage.py runserver
 ```
 
 The development server will be accessible at http://127.0.0.1:8000/ in your web browser. You can explore the climbing blog and its features locally.
+
+## Logging In to the Admin Panel
+
+To access the admin panel, you'll need to create a superuser account. You can do this by running the following command:
+
+```bash
+py manage.py createsuperuser
+```
+
+You'll be prompted to enter a username, email address, and password for your superuser account. Once you've created a superuser, you can log in to the admin panel.
+
+[Back to top](#table-of-contents)
+
+## Credentials
+
+A superuser has already been created for the instructor to access the admin panel. The credentials are as follows:
+
+- Username: instructor
+- Password: DjangoRocks1!
 
 [Back to top](#table-of-contents)
 
