@@ -18,6 +18,7 @@
 - [Running the Project Locally](#running-the-project-locally)
 - [Assignment Requirements](#assignment-requirements)
   - [Assignment 1](#assignment-1)
+  - [Assignment 2](#assignment-2)
 
 ## Project Description
 
