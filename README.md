@@ -21,6 +21,7 @@
 - [Assignment Requirements](#assignment-requirements)
   - [Assignment 1](#assignment-1)
   - [Assignment 2](#assignment-2)
+  - [Assignment 3](#assignment-3)
 
 ## Project Description
 
@@ -291,3 +292,38 @@ Part 4: Writing queries
 - Submit the python file via Dropbox that includes queries which should work on your deployed Heroku app (you can paste the queries in the text box of Dropbox)
 
 [Back to top](#table-of-contents)
+
+### Assignment 3
+
+#### Assignment Description
+
+For this assignment, you are tasked to style your base template using CSS. You will create a look & feel that best suits your taste and the content of your site. The design portion is a creative exercise, but technical considerations covered in this module will be evaluated.
+
+#### Tasks
+
+1. Create a base template with at least one content block which is styled using CSS.
+
+2. Create a home page (view & template) which extends the base template.
+
+3. Render the list of topics contained in the Topic model in a sidebar.
+
+   - Include the total number of posts for each topic (hint: use query annotations). You may display topics without posts – they will have a count of 0.
+   - Order the list by the most popular topic (most posts).
+   - Limit to the top 10 topics.
+
+4. Ensure that there is sample data in your site's database to appropriately render content.
+
+#### Evaluation Criteria
+
+- Base template structure & design: /3
+- At least one content block which is styled using CSS: /3
+- Create a home page (view & template) which extends the base template: /3
+- Render the list of topics: /3
+- Ensure that there is sample data in your site's database to appropriately render content: /3
+
+#### Grade Explanation
+
+- 3: Criteria is met and all functionality is present.
+- 2: Criteria is mostly met with some gaps in functionality.
+- 1: Criteria is mostly unsatisfied or not functional, though some elements are present.
+- 0: Criteria is not met. No visible attempt to satisfy it exists.
