@@ -45,3 +45,29 @@ def landing_page(request):
     }
 
     return render(request, 'blog/landing_page.html', context)
+
+
+def about(request):
+    '''
+    About page for blog app.
+
+    Parameters:
+    - request (HttpRequest): The HTTP request object.
+
+    Returns:
+    - HttpResponse: Rendered HTML for the about page.
+    '''
+    return render(request, 'blog/about.html')
+
+
+def contact(request):
+    '''
+    Contact page for blog app.
+
+    Parameters:
+    - request (HttpRequest): The HTTP request object.
+
+    Returns:
+    - HttpResponse: Rendered HTML for the contact page.
+    '''
+    return render(request, 'blog/contact.html')
