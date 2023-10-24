@@ -327,3 +327,5 @@ For this assignment, you are tasked to style your base template using CSS. You w
 - 2: Criteria is mostly met with some gaps in functionality.
 - 1: Criteria is mostly unsatisfied or not functional, though some elements are present.
 - 0: Criteria is not met. No visible attempt to satisfy it exists.
+
+[Back to top](#table-of-contents)
