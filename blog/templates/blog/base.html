@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Climbing Blog</title>
+    <link rel="stylesheet" href="{% static 'blog/css/styles.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>My Climbing Blog</h1>
+        <p>A blog about climbing awesomeness</p>
+        <nav>
+          {% for item in nav_list %}
+          <a href="{{ item.url }}">{{ item.name }}</a>
+          {% endfor %}
+        </nav>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+      <main>{% block content %} {% endblock %}</main>
+
+      <section>{% block sidebar %}{% endblock %}</section>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2023 My Climbing Blog</p>
+      </div>
+    </footer>
+  </body>
+</html>

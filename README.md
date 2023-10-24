@@ -26,11 +26,11 @@
 
 This blog project is an assignment under the Sheridan College -- Ontarion Bright Learn umbrella. It serves as a platform for sharing climbing experiences, insights, and knowledge. Whether you're an avid climber or just curious about the sport, the blog provides valuable content for climbers of all levels. <br>
 
+**View the Live Project:** You can view the live project at https://sheridan-alexander-jessop-a0fc086eb075.herokuapp.com/. <br>
+
 [Back to top](#table-of-contents)
 
 ## Getting Started
-
-**View the Live Project:** You can view the live project at https://sheridan-alexander-jessop-a0fc086eb075.herokuapp.com/. <br>
 
 To get started with this project, you can follow these steps:
 

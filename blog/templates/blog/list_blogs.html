@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %} {% block content %}
+<div class="landing-content">
+  <h2>All Blogs on Site</h2>
+  <p>
+    Discover what everyone is saying; from news, tips, and experiences from the
+    climbing world.
+  </p>
+  <hr />
+  <br />
+  {% for blog in blogs %}
+  <article class="post">
+    <h3>{{ blog.title }}</h3>
+    <p>{{ blog.author }} | {{blog.published}}</p>
+    <hr />
+    <p>{{ blog.content }}</p>
+    <br />
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}

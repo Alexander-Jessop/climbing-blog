@@ -6,8 +6,6 @@ from django.utils import timezone
 from django.utils.text import slugify
 from django.contrib.auth.models import User
 
-# Create your models here.
-
 
 class Topic(models.Model):
     '''

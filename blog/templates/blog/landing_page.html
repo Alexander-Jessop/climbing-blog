@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %} {% block content %}
+<div class="landing-content">
+  <h2>Top Blogs</h2>
+  <p>
+    Discover the latest news, tips, and experiences from the climbing world.
+  </p>
+  <hr />
+  <br />
+  {% for post in posts %}
+  <article class="post">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.author }} | {{post.published}}</p>
+    <hr />
+    <p>{{ post.content }}</p>
+    <br />
+  </article>
+  {% endfor %}
+</div>
+{% endblock %} {% block sidebar %}
+<div class="sidebar">
+  <h4>Popular Topics</h4>
+  <ul>
+    {% for topic in topics %}
+    <li>{{ topic.name }} ({{ topic.post_count }} posts)</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
