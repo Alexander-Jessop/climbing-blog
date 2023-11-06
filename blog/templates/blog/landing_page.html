@@ -1,4 +1,5 @@
-{% extends "blog/base.html" %} {% block content %}
+{% extends "blog/base.html" %} {% block title %} My Blog - Top Blogs
+{%endblock%} {% block content %}
 <div class="landing-content">
   <h2>Top Blogs</h2>
   <p>
@@ -9,20 +10,16 @@
   {% for post in posts %}
   <article class="post">
     <h3>{{ post.title }}</h3>
+    <p>
+      Topics: {% for topic in post.topics.all %}
+      <a href="{{ topic.get_absolute_url }}">{{ topic.name }}</a>
+      {% if not forloop.last %}, {% endif %} {% endfor %}
+    </p>
     <p>{{ post.author }} | {{post.published}}</p>
     <hr />
     <p>{{ post.content }}</p>
     <br />
   </article>
   {% endfor %}
-</div>
-{% endblock %} {% block sidebar %}
-<div class="sidebar">
-  <h4>Popular Topics</h4>
-  <ul>
-    {% for topic in topics %}
-    <li>{{ topic.name }} ({{ topic.post_count }} posts)</li>
-    {% endfor %}
-  </ul>
 </div>
 {% endblock %}

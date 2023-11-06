@@ -1,14 +1,14 @@
-{% extends "blog/base.html" %} {% block title %} My Blog - All Blogs
-{%endblock%} {% block content %}
+{% extends "blog/base.html" %} {% block title %}My Blog - {{ topic.name }}
+{%endblock %} {% block content %}
 <div class="landing-content">
-  <h2>All Blogs on Site</h2>
+  <h2>Posts about {{ topic.name }}</h2>
   <p>
-    Discover what everyone is saying; from news, tips, and experiences from the
-    climbing world.
+    Discover what everyone is saying; from news, tips, and experiences related
+    to {{ topic.name }}.
   </p>
   <hr />
   <br />
-  {% for blog in blogs %}
+  {% for blog in posts %}
   <article class="post">
     <h3>{{ blog.title }}</h3>
     <p>
@@ -31,6 +31,8 @@
       {% endfor %}
     </div>
   </article>
+  {% empty %}
+  <p>No blog posts found for this topic.</p>
   {% endfor %}
 </div>
 {% endblock %}

@@ -3,6 +3,7 @@ Modles for blog app
 '''
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
 from django.utils.text import slugify
 from django.contrib.auth.models import User
 
@@ -29,6 +30,9 @@ class Topic(models.Model):
     def save(self, *args, **keyargs):
         self.slug = slugify(self.name)
         super().save(*args, **keyargs)
+
+    def get_absolute_url(self):
+        return reverse('topic_detail', kwargs={'slug': self.slug})
 
 
 class Post(models.Model):

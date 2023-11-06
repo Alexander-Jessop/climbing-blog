@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Climbing Blog</title>
+    <title>{% block title %}Climbing Blog{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'blog/css/styles.css' %}" />
   </head>
   <body>
@@ -23,7 +23,22 @@
     <div class="content-wrapper">
       <main>{% block content %} {% endblock %}</main>
 
-      <section>{% block sidebar %}{% endblock %}</section>
+      <section>
+        <div class="sidebar">
+          <h4>Popular Topics</h4>
+          <ul>
+            {% for topic in topics %}
+            <li>
+              <a href="{% url 'topic_detail' slug=topic.slug %}"
+                >{{ topic.name }}</a
+              >
+              ({{ topic.post_count }} posts)
+            </li>
+            {% endfor %}
+            <li><a href="{% url 'topics' %}">View All</a></li>
+          </ul>
+        </div>
+      </section>
     </div>
 
     <footer>

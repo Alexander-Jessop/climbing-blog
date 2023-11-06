@@ -2,6 +2,9 @@
 Module for navigation-related utilities.
 """
 
+from django.db.models import Count
+from .models import Topic
+
 
 def navigation(reqeust):
     """
@@ -14,7 +17,21 @@ def navigation(reqeust):
         'nav_list': [
             {'name': 'Home', 'url': '/'},
             {'name': 'About', 'url': '/about'},
+            {'name': 'Topics', 'url': '/topics/'},
             {'name': 'Blogs', 'url': '/blogs'},
-            {'name': 'Contact', 'url': '/contact'},
+            {'name': 'Contact', 'url': '/contact'}
         ]
     }
+
+
+def topic_list(request):
+    """
+    Topic list.
+
+    Returns:
+        dict: topic list.
+    """
+    top_topics = Topic.objects.annotate(
+        post_count=Count('post')).order_by('-post_count')[:10]
+
+    return {'topics': top_topics}
