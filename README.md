@@ -22,6 +22,7 @@
   - [Assignment 1](#assignment-1)
   - [Assignment 2](#assignment-2)
   - [Assignment 3](#assignment-3)
+  - [Assignment 4](#assignment-4)
 
 ## Project Description
 
@@ -327,5 +328,86 @@ For this assignment, you are tasked to style your base template using CSS. You w
 - 2: Criteria is mostly met with some gaps in functionality.
 - 1: Criteria is mostly unsatisfied or not functional, though some elements are present.
 - 0: Criteria is not met. No visible attempt to satisfy it exists.
+
+[Back to top](#table-of-contents)
+
+### Assignment 4
+
+This assignment continues to build upon your blog project.
+
+In this assignment, we will build pages for Topics. We will create a list view for all the topics which will link to detailed views. The detailed view will consist of a list of posts which are about the provided topic.
+
+#### Requirements
+
+1. **Move global queries to context_processors**
+
+   Move the top topics list query to the `blog.context_processors.base_context` function created in this module. This will expose the top topics on all the site pages.
+
+2. **Build a topic ListView**
+
+   Create a `ListView` that renders all topics defined in the database.
+
+   - Define the URL at `/topics/`. Note the trailing slash.
+   - List the topics alphabetically
+   - Link the topic to the topic detail view
+   - Set the page title block
+
+3. **Build a topic DetailView**
+
+   Create a `DetailView` for the topic
+
+   - Define the URL as `/topics/<slug:slug>/`. Note the trailing slash.
+   - Render a list of posts filtered by this topic. This should be formatted like the post previews on the home & post list pages.
+   - Only published posts should appear
+   - Posts should be ordered by latest to earliest published date
+
+   ##### Hints:
+
+   - Overriding the `get_context_data()` method of the `DetailView` allows the customization of the context variables to the template
+   - To access the topic object from the `DetailView`, use the `self.get_object()` method. Alternatively, you can get the `pk` value from `self.kwargs`.
+   - Can you use an existing template component/partial to render the post previews?
+
+4. **Define `get_absolute_url` on the Topic model**
+
+   Define and return the appropriate URL for the topic object.
+
+   _Hint:_ use the `reverse()` function to construct the string.
+
+5. **Link topics to their detailed page on the site**
+
+   The topics sidebar:
+
+   - Add a link for each top topic which will bring the user to the topic detail view using the `get_absolute_url`.
+   - Add a link to "view all" topics
+
+   The main navigation:
+
+   - Add a link to "Topics"
+
+   The post detail page:
+
+   - Each post has related topics. List these on the post detail page
+   - Link each topic to their pages
+
+#### Evaluation
+
+##### Grading Criteria
+
+| Grade | Criteria                           |
+| ----- | ---------------------------------- |
+| 5     | Context processor                  |
+| 5     | Topic list view                    |
+| 5     | Topic detailed view                |
+| 5     | Define `get_absolute_url`          |
+| 5     | Links to topic list & detail pages |
+
+##### Grade ( / 5 )
+
+| Grade | Explanation of the Criteria                                                        |
+| ----- | ---------------------------------------------------------------------------------- |
+| 5     | Criteria is met and all functionality is present, accompanied with tests           |
+| 3     | Criteria is mostly met with some gaps in functionality                             |
+| 1     | Criteria is mostly unsatisfied or not functional, though some elements are present |
+| 0     | Criteria is not met. No visible attempt to satisfy it exists                       |
 
 [Back to top](#table-of-contents)
