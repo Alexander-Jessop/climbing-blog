@@ -5,9 +5,11 @@ This module contains the views to display lists of published blog posts and
 details for individual blog posts.
 """
 
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import redirect, get_object_or_404, render
 from django.utils import timezone
+from django.contrib import messages
 from .models import Post, Topic
+from .forms import PhotoSubmissionForm
 
 
 def list_blogs(request):
@@ -112,3 +114,30 @@ def contact(request):
     - HttpResponse: Rendered HTML for the contact page.
     '''
     return render(request, 'blog/contact.html')
+
+
+def photo_contest_view(request):
+    """
+    View for submitting photos to the photo contest.
+
+    This view handles the submission of photo contest entries. It creates a form instance
+    using the PhotoSubmissionForm when a GET request is made. Upon POST request, it
+    validates and saves the form, then redirects or shows a success message.
+
+    Parameters:
+    - request (HttpRequest): The HTTP request object.
+
+    Returns:
+    - HttpResponse: Rendered HTML for the photo contest submission form, or a redirect
+                    to a success page upon successful form submission.
+    """
+    if request.method == 'POST':
+        form = PhotoSubmissionForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request, 'Thank you! Your photo submission has been received.')
+            return redirect('photo_contest')
+    else:
+        form = PhotoSubmissionForm()
+    return render(request, 'blog/photo_contest.html', {'form': form})

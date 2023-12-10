@@ -19,7 +19,8 @@ def navigation(reqeust):
             {'name': 'About', 'url': '/about'},
             {'name': 'Topics', 'url': '/topics/'},
             {'name': 'Blogs', 'url': '/blogs'},
-            {'name': 'Contact', 'url': '/contact'}
+            {'name': 'Photo Contest', 'url': '/photo-contest'},
+            {'name': 'Contact', 'url': '/contact'},
         ]
     }
 

@@ -123,3 +123,26 @@ class Comment(models.Model):
             timestamp in reverse order.
         '''
         ordering = ['-created']
+
+
+class PhotoSubmission(models.Model):
+    '''
+    Represents a photo submission for the photo contest.
+
+    Attributes:
+        name (CharField): The name of the user submitting the photo.
+        email (EmailField): Email address of the user submitting the photo.
+        image (ImageField): The image file that the user submits.
+        submitted_at (DateTimeField): Timestamp indicating when the photo was submitted.
+
+    Methods:
+        __str__: Returns a readable string representation of the submission.
+    '''
+
+    name = models.CharField(max_length=255, null=False, blank=False)
+    email = models.EmailField(null=False, blank=False)
+    image = models.ImageField(upload_to='photo_submissions/')
+    submitted_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"Photo Submission by {self.name} on {self.submitted_at.strftime('%Y-%m-%d %H:%M')}"

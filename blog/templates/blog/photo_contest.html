@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %} {% block title %} Photo Contest Submission
+{%endblock%} {% block content %}
+<div>
+  <h2>Enter the photo contest!</h2>
+  <p>
+    Are you a climbing nut with a knack for capturing breathtaking moments on
+    the rock face? It's time to showcase your talent in our annual Climbing
+    Snapshot Challenge! Submit your most gripping, chalk-dusted, and
+    adrenaline-fueled climbing photos to win. The winner will receive the
+    "Golden Carabiner" award and a year's supply of our chalk, so you can keep
+    gripping those jugs with the utmost confidence!
+  </p>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+</div>
+{% endblock %}

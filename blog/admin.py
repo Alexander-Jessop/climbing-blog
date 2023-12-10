@@ -59,3 +59,22 @@ class TopicAdmin(admin.ModelAdmin):
 
 
 admin.site.register(models.Topic, TopicAdmin)
+
+
+class PhotoSubmissionAdmin(admin.ModelAdmin):
+    '''
+    Admin representation for the PhotoSubmission model.
+
+    Attributes:
+        list_display (tuple): A tuple containing the fields to be displayed in the list view.
+        search_fields (tuple): A tuple containing the fields that can be searched in the admin.
+        list_filter (tuple): A tuple containing the fields that can be used as filters in the
+        sidebar.
+    '''
+
+    list_display = ('name', 'email', 'submitted_at')
+    search_fields = ('name', 'email')
+    list_filter = ('submitted_at',)
+
+
+admin.site.register(models.PhotoSubmission, PhotoSubmissionAdmin)
