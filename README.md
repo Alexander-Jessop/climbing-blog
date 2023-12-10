@@ -23,6 +23,7 @@
   - [Assignment 2](#assignment-2)
   - [Assignment 3](#assignment-3)
   - [Assignment 4](#assignment-4)
+  - [Assignment 5](#assignment-5)
 
 ## Project Description
 
@@ -400,6 +401,47 @@ In this assignment, we will build pages for Topics. We will create a list view f
 | 5     | Topic detailed view                |
 | 5     | Define `get_absolute_url`          |
 | 5     | Links to topic list & detail pages |
+
+##### Grade ( / 5 )
+
+| Grade | Explanation of the Criteria                                                        |
+| ----- | ---------------------------------------------------------------------------------- |
+| 5     | Criteria is met and all functionality is present, accompanied with tests           |
+| 3     | Criteria is mostly met with some gaps in functionality                             |
+| 1     | Criteria is mostly unsatisfied or not functional, though some elements are present |
+| 0     | Criteria is not met. No visible attempt to satisfy it exists                       |
+
+[Back to top](#table-of-contents)
+
+### Assignment 5
+
+This assignment adds another feature to your blog website which will collect and save user data and an image to the database as part of a hypothetical photo contest.
+
+Add a link to the contest in the main navigation bar which will take users to a page describing the contest and containing a form in which they can upload their information and photo submission.
+
+The required pieces of information to gather from the user are
+
+    Their name
+    Their email address
+    An image
+
+In addition to the information gathered, also save the date & time of the submission.
+
+Register the model in the Django admin and customize its presentation so it can be sorted, filtered, etc. by a staff member of your site.
+
+#### Hints:
+
+- To upload files in a form you must set the encoding to "multipart/form-data" by adding the following to the <form> tag: <form enctype="multipart/form-data" ... >
+
+#### Evaluation
+
+##### Grading Criteria
+
+| Grade | Criteria                                                 |
+| ----- | -------------------------------------------------------- |
+| 5     | Upload form                                              |
+| 5     | Django admin                                             |
+| 5     | Template presentation, presence of links to contest page |
 
 ##### Grade ( / 5 )
 
